@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Inicio | REVO Studio</title>
+
+  <link rel="stylesheet" href="./style/index.css">
+  <link rel="stylesheet" href="./style/menu.css">
+  <link rel="stylesheet" href="./style/catalogo.css">
+
+  <link rel="stylesheet" href="./style/slider.css">
+
+</head>
+
+<body>
+
+  <header>
+
+    <div class="logo">
+      <img src="./img/logo/REVO_final_2.0.png" alt="REVO Studio">
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="nav">
+      <a href="#">Inicio</a>
+      <a href="./about-us.html">Sobre Nosotros</a>
+      <a href="./contact.html">Contacto</a>
+    </nav>
+
+    <div class="cart-icon">
+      <a href="./cart.html"><img src="./img/resource/cart.png" alt="Carrito de compras"></a>
+    </div>
+
+  </header>
+
+  <!-- SLIDER -->
+  <div class="slider-container">
+
+    <div class="slider" id="slider">
+
+      <div class="slide"><img src="./img/catalogo/estanteria1.webp" alt="Imagen 1"></div>
+      <div class="slide"><img src="./img/catalogo/estanteria3.jpg" alt="Imagen 2"></div>
+      <div class="slide"><img src="./img/catalogo/flotante1.jpg" alt="Imagen 3"></div>
+      <div class="slide"><img src="./img/catalogo/luz1.jpg" alt="Imagen 4"></div>
+      <div class="slide"><img src="./img/catalogo/mesa3.jpg" alt="Imagen 5"></div>
+      <div class="slide"><img src="./img/catalogo/mesa2.jpeg" alt="Imagen 6"></div>
+
+    </div>
+
+    <div class="nav-buttons">
+
+      <button aria-label="Anterior" onclick="prevSlide()">❮</button>
+      <button aria-label="Siguiente" onclick="nextSlide()">❯</button>
+
+    </div>
+
+    <!-- indicadores (puntos) -->
+    <div class="slider-dots" id="slider-dots" aria-hidden="false"></div>
+
+  </div>
+
+  <!-- CATALOGO -->
+  <div class="catalogo-container">
+
+    <div class="catalogo-layout">
+
+      <h1>Catálogo</h1>
+
+      <div class="filtro filtro-wrapper">
+
+        <button class="filtro-toggle" onclick="toggleFiltro()">Filtrar por categoría</button>
+
+        <div class="filtro-opciones" id="filtro-opciones">
+
+          <label><input type="checkbox" value="auxiliar" onchange="filtrarItems()"> Mesa auxiliar</label>
+          <label><input type="checkbox" value="dormitorio" onchange="filtrarItems()"> Dormitorio</label>
+          <label><input type="checkbox" value="escritorio" onchange="filtrarItems()"> Escritorio</label>
+          <label><input type="checkbox" value="estanteria" onchange="filtrarItems()"> Estanterías</label>
+          <label><input type="checkbox" value="flotante" onchange="filtrarItems()"> Flotantes</label>
+          <label><input type="checkbox" value="jardin" onchange="filtrarItems()"> Juegos de jardín</label>
+          <label><input type="checkbox" value="luz" onchange="filtrarItems()"> Mesas de luz</label>
+          <label><input type="checkbox" value="mesa" onchange="filtrarItems()"> Mesas</label>
+          <label><input type="checkbox" value="silla" onchange="filtrarItems()"> Sillas</label>
+          <label><input type="checkbox" value="tocador" onchange="filtrarItems()"> Tocador</label>
+
+          <button onclick="limpiarFiltros()">Limpiar filtros</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="items-grid" id="itemsGrid">
+
+      <div class="item" data-categoria="auxiliar">
+        <img src="./img/catalogo/auxiliar1.jpg" alt="Mesa Auxiliar">
+        <div class="item-info">
+          <h3>Mesa auxiliar</h3>
+          <p>$120</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="auxiliar">
+        <img src="./img/catalogo/auxiliar2.jpg" alt="Mesa Auxiliar">
+        <div class="item-info">
+          <h3>Mesa auxiliar</h3>
+          <p>$350</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="estanteria">
+        <img src="./img/catalogo/comedor1.jpg" alt="Estantería">
+        <div class="item-info">
+          <h3>Estantería</h3>
+          <p>$890</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="dormitorio">
+        <img src="./img/catalogo/dormitorio1.jpg" alt="Cama de 2 plazas">
+        <div class="item-info">
+          <h3>Cama de 2 plazas</h3>
+          <p>$120</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="escritorio">
+        <img src="./img/catalogo/escritorio.jpg" alt="Escritorio">
+        <div class="item-info">
+          <h3>Escritorio</h3>
+          <p>$350</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="estanteria">
+        <img src="./img/catalogo/estanteria1.webp" alt="Estantería">
+        <div class="item-info">
+          <h3>Estantería</h3>
+          <p>$890</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="estanteria">
+        <img src="./img/catalogo/estanteria2.jpg" alt="Estantería">
+        <div class="item-info">
+          <h3>Estantería</h3>
+          <p>$120</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="estanteria">
+        <img src="./img/catalogo/estanteria3.jpg" alt="Estantería">
+        <div class="item-info">
+          <h3>Estanteria</h3>
+          <p>$350</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="flotante">
+        <img src="./img/catalogo/flotante1.jpg" alt="Mueble flotante">
+        <div class="item-info">
+          <h3>Mueble flotante</h3>
+          <p>$890</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="flotante">
+        <img src="./img/catalogo/flotante2.jpg" alt="Mueble flotante">
+        <div class="item-info">
+          <h3>Mueble flotante</h3>
+          <p>$120</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="flotante">
+        <img src="./img/catalogo/flotante3.jpg" alt="Mueble flotante">
+        <div class="item-info">
+          <h3>Mueble flotante</h3>
+          <p>$350</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="jardin">
+        <img src="./img/catalogo/jardin1.jpg" alt="Juego de jardín">
+        <div class="item-info">
+          <h3>Juego de jardín</h3>
+          <p>$890</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="jardin">
+        <img src="./img/catalogo/jardin2.jpg" alt="Juego de jardín">
+        <div class="item-info">
+          <h3>Juego de jardín</h3>
+          <p>$120</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="luz">
+        <img src="./img/catalogo/luz1.jpg" alt="Mesa de luz">
+        <div class="item-info">
+          <h3>Mesa de luz</h3>
+          <p>$350</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="luz">
+        <img src="./img/catalogo/luz2.jpg" alt="Mesa de luz">
+        <div class="item-info">
+          <h3>Mesa de luz</h3>
+          <p>$890</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="mesa">
+        <img src="./img/catalogo/mesa1.jpg" alt="Mesa">
+        <div class="item-info">
+          <h3>Mesa</h3>
+          <p>$120</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="mesa">
+        <img src="./img/catalogo/mesa2.jpeg" alt="Mesa">
+        <div class="item-info">
+          <h3>Mesa</h3>
+          <p>$350</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="mesa">
+        <img src="./img/catalogo/mesa3.jpg" alt="Mesa">
+        <div class="item-info">
+          <h3>Mesa</h3>
+          <p>$890</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="estanteria">
+        <img src="./img/catalogo/estanteria4.jpeg" alt="Estantería">
+        <div class="item-info">
+          <h3>Estantería</h3>
+          <p>$890</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="silla">
+        <img src="./img/catalogo/silla1.jpg" alt="Silla">
+        <div class="item-info">
+          <h3>Silla</h3>
+          <p>$120</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="silla">
+        <img src="./img/catalogo/silla2.jpg" alt="Silla">
+        <div class="item-info">
+          <h3>Silla</h3>
+          <p>$350</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="silla">
+        <img src="./img/catalogo/silla3.jpg" alt="Silla">
+        <div class="item-info">
+          <h3>Silla</h3>
+          <p>$890</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="tocador">
+        <img src="./img/catalogo/tocador1.jpg" alt="Tocador">
+        <div class="item-info">
+          <h3>Tocador</h3>
+          <p>$120</p>
+        </div>
+      </div>
+
+      <div class="item" data-categoria="tocador">
+        <img src="./img/catalogo/tocador2.jpg" alt="Tocador">
+        <div class="item-info">
+          <h3>Tocador</h3>
+          <p>$350</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+
+    <div class="footer-content">
+
+      <p>Pedro Margat 1606</p>
+      <p><a href="mailto:revostudio@gmail.com">revostudio@gmail.com</a></p>
+      <p>&copy; REVO Studio</p>
+      <p><a href="tel:+59899309557">099309557</a></p>
+      <p><a href="https://instagram.com/revostudio" target="_blank" rel="noopener">@revostudio</a></p>
+      
+    </div>
+
+  </footer>
+
+  <script src="./js/app.js"></script>
+
+</body>
+
+</html>

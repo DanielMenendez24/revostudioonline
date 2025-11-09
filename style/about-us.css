@@ -1,0 +1,222 @@
+/* Styles for About Us page */
+
+:root {
+	--accent: #a0522d;
+	--muted: #6b4f3a;
+	--card-bg: rgba(255, 255, 255, 0.96);
+}
+
+.about-container {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.page-layout {
+	display: flex;
+	width: 35%;
+}
+
+.sidebar {
+	width: 100%;
+	padding: 10px;
+	object-fit: cover;
+}
+
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0 18px;
+}
+
+.about-hero {
+	padding: 64px 0 36px;
+}
+
+.about-hero .container {
+	text-align: left;
+}
+
+.about-hero h1 {
+	margin: 0 0 12px;
+	font-size: 40px;
+	color: #2b1f18;
+	letter-spacing: 0.2px;
+}
+
+.about-hero .lead {
+	/* margin: 0 auto; */
+	max-width: 820px;
+	font-size: 18px;
+	color: var(--muted);
+	line-height: 1.6;
+}
+
+.about-sections {
+	padding: 28px 0 60px;
+}
+
+.about-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 22px;
+	align-items: start;
+}
+
+.about-card {
+	background: var(--card-bg);
+	border-radius: 10px;
+	padding: 18px;
+	box-shadow: 0 6px 18px rgba(20, 20, 20, 0.06);
+	color: #2b1f18;
+}
+
+.about-card h2 {
+	margin: 0 0 8px;
+	font-size: 20px;
+	color: #2b1f18;
+}
+
+.about-card p,
+.about-card ul {
+	margin: 0;
+	color: var(--muted);
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+.about-card ul {
+	padding-left: 18px;
+	margin-top: 8px;
+}
+
+.about-card li {
+	margin-bottom: 6px;
+}
+
+.about-cta {
+	margin-top: 22px;
+	text-align: center;
+}
+
+.about-cta p {
+	margin: 0;
+	font-size: 16px;
+	color: var(--muted);
+}
+
+.about-cta a {
+	color: white;
+	background: var(--accent);
+	padding: 10px 16px;
+	border-radius: 8px;
+	text-decoration: none;
+	margin-left: 8px;
+	display: inline-block;
+}
+
+.about-cta a:hover {
+	opacity: 0.95
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+	.about-container {
+		margin-bottom: 15%;
+	}
+
+	.about-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.about-hero h1 {
+		font-size: 36px;
+	}
+}
+
+@media (max-width: 640px) {
+	.about-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.about-hero {
+		padding: 36px 0 20px;
+	}
+
+	.about-hero h1 {
+		font-size: 28px;
+	}
+
+	.about-hero .lead {
+		font-size: 15px;
+	}
+
+	.about-card {
+		padding: 14px;
+	}
+
+	.about-cta a {
+		padding: 9px 14px;
+	}
+}
+
+/* Two-column layout: sidebar (logo) on the left, main content on the right */
+.page-layout {
+	display: grid;
+	grid-template-columns: 220px 1fr;
+	gap: 24px;
+	align-items: start;
+	margin-top: 28px;
+}
+
+.sidebar {
+	display: flex;
+	align-items: start;
+	grid-column: 1 / -1;
+	width: 100%;
+	justify-content: flex-start;
+	padding-top: 12px;
+	padding-left: 18px;
+}
+
+.sidebar-logo {
+	/* max-width: 180px; */
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.main-content {
+	min-width: 0;
+	max-width: 60%;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 900px) {
+	.page-layout {
+		grid-template-columns: 160px 1fr;
+		gap: 16px;
+	}
+
+	.sidebar-logo {
+		max-width: 140px;
+	}
+}
+
+@media (max-width: 640px) {
+	.page-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.sidebar {
+		order: -1;
+		justify-content: center;
+		padding-bottom: 8px;
+	}
+
+	.sidebar-logo {
+		max-width: 140px;
+	}
+}
