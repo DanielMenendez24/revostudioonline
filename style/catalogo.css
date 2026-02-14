@@ -172,11 +172,13 @@
   .items-grid {
     grid-template-columns: 1fr;
     /* single column on small screens */
-    justify-content: stretch;
+    justify-items: stretch;
+    /* Stretch items to fill the column */
   }
 
   .item {
     width: 100%;
+    /* Occupy full width of the screen */
   }
 
   .item-info {

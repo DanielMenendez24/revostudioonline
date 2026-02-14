@@ -8,6 +8,8 @@
 
 body {
 	overflow-x: visible;
+	padding-bottom: 12vh;
+	/* Prevent fixed footer overlap */
 }
 
 .about-container {
@@ -26,7 +28,6 @@ body {
 .sidebar {
 	width: 100%;
 	padding: 10px;
-	object-fit: cover;
 }
 
 .container {
@@ -35,9 +36,7 @@ body {
 	padding: 0 18px;
 }
 
-.about-hero {
-	/* padding: 32px 0 32px; */
-}
+
 
 .about-hero .container {
 	text-align: left;
@@ -139,11 +138,34 @@ body {
 	.about-hero h1 {
 		font-size: 36px;
 	}
+
+	.main-content {
+		max-width: 100%;
+	}
+}
+
+/* Ensure footer is fixed to bottom */
+footer {
+	position: fixed !important;
+	/* Override any potential conflicts */
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+}
+
+@media (max-width: 760px) {
+	body {
+		padding-bottom: 18vh;
+		/* Prevent fixed footer overlap on mobile */
+	}
 }
 
 @media (max-width: 640px) {
 	.about-grid {
 		grid-template-columns: 1fr;
+		justify-items: center;
+		/* Center items horizontally */
 	}
 
 	.about-hero {
@@ -160,6 +182,10 @@ body {
 
 	.about-card {
 		padding: 14px;
+		max-width: 450px;
+		/* Prevent too wide cards */
+		width: 100%;
+		/* Take full width up to max-width */
 	}
 
 	.about-cta a {
@@ -223,16 +249,20 @@ body {
 
 @media (max-width: 640px) {
 	.page-layout {
-		grid-template-columns: 1fr;
+		display: block;
+		/* Remove grid to stack cleanly */
 	}
 
 	.sidebar {
-		order: -1;
-		justify-content: center;
-		padding-bottom: 8px;
+		display: none;
+		/* Hide sidebar/logo on mobile as requested */
 	}
 
 	.sidebar-logo {
 		max-width: 140px;
+	}
+
+	.main-content {
+		max-width: 100%;
 	}
 }
